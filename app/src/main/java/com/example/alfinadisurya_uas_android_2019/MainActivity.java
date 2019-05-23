@@ -20,12 +20,12 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
-    private EditText input;
-    private TextView idgua;
-    private TextView namagua;
-    private TextView asalgua;
-    private TextView kamargua;
-    private RequestQueue nQueue;
+    public EditText input;
+    public TextView idgua;
+    public TextView namagua;
+    public TextView asalgua;
+    public TextView kamargua;
+    public RequestQueue nQueue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
         nQueue = Volley.newRequestQueue(this);
         input = findViewById(R.id.et1);
+
         idgua = findViewById(R.id.tvid);
         namagua = findViewById(R.id.tvnama);
         asalgua = findViewById(R.id.tvasal);
@@ -43,28 +44,31 @@ public class MainActivity extends AppCompatActivity {
         go.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                tampil();
+                int cetak;
+                cetak = Integer.parseInt(String.valueOf(input.getText()))-1;
+                tampil(cetak);
             }
         });
     }
-    private void tampil(){
+    public void tampil(final int cetak){
         String url ="http://192.168.5.31/WebServices/JSON/android/mahasantri_data.json";
 
         JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
                 try {
-                    JSONObject mahasantri = response.getJSONObject(1);
+
+                    JSONObject mahasantri = response.getJSONObject(cetak);
 
                     String id = mahasantri.getString("id");
                     String nama = mahasantri.getString("nama");
                     String asal = mahasantri.getString("asal_Daerah");
                     String kamar = mahasantri.getString("kamar");
 
-                    idgua.append(id);
-                    namagua.append(nama);
-                    asalgua.append(asal);
-                    kamargua.append(kamar);
+                    idgua.setText(id);
+                    namagua.setText(nama);
+                    asalgua.setText(asal);
+                    kamargua.setText(kamar);
 
                 } catch (JSONException e) {
                     e.printStackTrace();
