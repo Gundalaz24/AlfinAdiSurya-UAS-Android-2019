@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:textSize="30px"
+        android:text="Masukkan id"/>
+    <EditText
+        android:id="@+id/et1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:hint="Masukkan angka dengan memilih angka 1-5"/>
+    <Button
+        android:id="@+id/btngo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et1"
+        android:text="JSON"
+        android:layout_centerHorizontal="true"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_below="@id/btngo"
+        android:textSize="30px"
+        android:text="ID :"/>
+    <TextView
+        android:id="@+id/tvid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btngo"
+        android:textSize="30px"
+        android:layout_marginLeft="35dp"
+        android:text=""/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginTop="170dp"
+        android:textSize="30px"
+        android:text="Nama :"/>
+    <TextView
+        android:id="@+id/tvnama"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btngo"
+        android:textSize="30px"
+        android:layout_marginTop="35dp"
+        android:layout_marginLeft="70dp"
+        android:text=""/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_below="@id/btngo"
+        android:layout_marginTop="80dp"
+        android:textSize="30px"
+        android:text="Asal Daerah :"/>
+    <TextView
+        android:id="@+id/tvasal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btngo"
+        android:textSize="30px"
+        android:layout_marginTop="80dp"
+        android:layout_marginLeft="120dp"
+        android:text=""/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_below="@id/btngo"
+        android:layout_marginTop="120dp"
+        android:textSize="30px"
+        android:text="Kamar :"/>
+    <TextView
+        android:id="@+id/tvkamar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btngo"
+        android:layout_marginTop="120dp"
+        android:textSize="30px"
+        android:layout_marginLeft="75dp"
+        android:text=""/>
+
+
+
+
+</RelativeLayout>
